@@ -133,6 +133,7 @@
                         <configuration>
                             <includes>
                                 <include>org/wiredwidgets/cow/**</include>
+                                <include>org/omg/**</include>
                             </includes>
                         </configuration>
                     </execution>
