@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wiredwidgets</groupId>
     <artifactId>cow-server-api</artifactId>
-    <version>0.5.2</version>
+    <version>0.5.3-SNAPSHOT</version>
     <name>cow-server-api</name>
     <url>http://maven.apache.org</url>
     <build>

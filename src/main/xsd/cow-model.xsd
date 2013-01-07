@@ -31,15 +31,17 @@
             <documentation>Abstract element that defines the substitution group for all concrete elements that can be used in a Process.</documentation>
         </annotation>
     </element>
-    <element name="task" type="tns:Task" substitutionGroup="tns:activity" nillable="false"/>
-    <element name="serviceTask" type="tns:ServiceTask" substitutionGroup="tns:activity"
-        nillable="false"/>
+
+
     <element name="activities" substitutionGroup="tns:activity" type="tns:Activities"/>
-    <element name="subProcess" substitutionGroup="tns:activity" type="tns:SubProcess"/>
     <element name="decision" substitutionGroup="tns:activity" type="tns:Decision"/>
-    <element name="loop" substitutionGroup="tns:activity" type="tns:Loop"/>
     <element name="exit" substitutionGroup="tns:activity" type="tns:Exit"/>
+    <element name="loop" substitutionGroup="tns:activity" type="tns:Loop"/>
     <element name="option" type="tns:Option"/>
+    <element name="serviceTask" substitutionGroup="tns:activity" type="tns:ServiceTask"/>
+    <element name="signal" substitutionGroup="tns:activity" type="tns:Signal" />
+    <element name="subProcess" substitutionGroup="tns:activity" type="tns:SubProcess"/>
+    <element name="task" substitutionGroup="tns:activity" type="tns:Task" />
 
     <!-- Type definitions -->
 
@@ -246,6 +248,17 @@
             </extension>
         </complexContent>
     </complexType>
+    
+    <complexType name="Signal">
+        <annotation>
+            <documentation>This activity waits for an external signal trigger.</documentation>
+        </annotation>
+        <complexContent>
+            <extension base="tns:Activity" >
+            	<attribute name="signalId" type="string" />
+            </extension>
+        </complexContent>
+    </complexType>    
      
     <complexType name="Parameter">
         <attribute name="subvar" type="string">
