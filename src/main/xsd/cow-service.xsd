@@ -22,7 +22,10 @@
     xmlns="http://www.w3.org/2001/XMLSchema"
     xmlns:tns="http://www.wiredwidgets.org/cow/server/schema/service"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:model="http://www.wiredwidgets.org/cow/server/schema/model-v2"
     xsi:schemaLocation="http://www.w3.org/2001/XMLSchema http://www.w3.org/2001/XMLSchema.xsd">
+    
+    <import namespace="http://www.wiredwidgets.org/cow/server/schema/model-v2" schemaLocation="cow-model.xsd"/>
 
     <!-- Global Elements -->
 
@@ -143,6 +146,7 @@
             <element maxOccurs="1" minOccurs="0" name="variables" type="tns:Variables"/>
             <element name="processDefinitionKey" type="string"/>
             <element minOccurs="0" maxOccurs="unbounded" name="task" type="tns:Task"/>
+            <element minOccurs="0" name="process" type="model:Process" />
         </sequence>
     </complexType>
 
