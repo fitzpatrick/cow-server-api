@@ -24,8 +24,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:model="http://www.wiredwidgets.org/cow/server/schema/model-v2"
     xsi:schemaLocation="http://www.w3.org/2001/XMLSchema http://www.w3.org/2001/XMLSchema.xsd">
-    
-    <import namespace="http://www.wiredwidgets.org/cow/server/schema/model-v2" schemaLocation="cow-model.xsd"/>
+
+    <import namespace="http://www.wiredwidgets.org/cow/server/schema/model-v2"
+        schemaLocation="cow-model.xsd"/>
 
     <!-- Global Elements -->
 
@@ -146,7 +147,8 @@
             <element maxOccurs="1" minOccurs="0" name="variables" type="tns:Variables"/>
             <element name="processDefinitionKey" type="string"/>
             <element minOccurs="0" maxOccurs="unbounded" name="task" type="tns:Task"/>
-            <element minOccurs="0" name="process" type="model:Process" />
+            <element minOccurs="0" name="process" type="model:Process"/>
+            <element name="statusSummary" type="tns:StatusSummary" maxOccurs="unbounded" minOccurs="0"/>
         </sequence>
     </complexType>
 
@@ -334,10 +336,21 @@
             <element maxOccurs="unbounded" minOccurs="0" name="transitionName" type="string"/>
         </sequence>
     </complexType>
+
     <complexType name="HistoryActivities">
         <sequence>
             <element ref="tns:historyActivity" maxOccurs="unbounded" minOccurs="0"/>
         </sequence>
+    </complexType>
+
+    <complexType name="StatusSummary">
+        <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="model:task"/>
+        </sequence>
+        <attribute name="type" type="string" />
+        <attribute name="name" type="string" />
+        <attribute name="status" type="string"/>
+        <attribute name="count" type="int"/>
     </complexType>
 
 </schema>
